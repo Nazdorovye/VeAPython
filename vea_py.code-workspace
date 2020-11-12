@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+        "files.exclude": {
+            "**/.git": true,
+            "**/2020_lecture_08": true
+				},
+				"editor.wordWrap": "wordWrapColumn",
+				"editor.wordWrapColumn": 100,
+				"editor.tabSize": 2,
+		}
+}
