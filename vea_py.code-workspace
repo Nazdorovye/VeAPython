@@ -1,16 +1,45 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
+  "folders": [
+    {
+      "path": "2020_lecture_02_tasks"
+    },
+    {
+      "path": "2020_lecture_03_tasks"
+    },
+    {
+      "path": "2020_lecture_04_tasks"
+    },
+    {
+      "path": "2020_lecture_07_tasks"
+    },
+    {
+      "path": "2020_lecture_08_tasks"
+    },
+    {
+      "path": "2020_lecture_10_tasks"
+    },
+    {
+      "path": "2020_lecture_11_tasks"
+    }
+  ],
+  "settings": {
         "files.exclude": {
             "**/.git": true,
-            "**/2020_lecture_08": true
-				},
-				"editor.wordWrap": "wordWrapColumn",
-				"editor.wordWrapColumn": 100,
-				"editor.tabSize": 2,
-		}
+        },
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 100,
+        "editor.tabSize": 2,
+    },
+    "launch": {
+      "version": "0.2.0",
+      "configurations": [
+        {
+          "name": "Python: Current File",
+          "type": "python",
+          "request": "launch",
+          "program": "${file}",
+          "console": "integratedTerminal"
+        }
+      ]
+    }
 }
