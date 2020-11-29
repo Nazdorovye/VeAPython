@@ -20,11 +20,15 @@
     },
     {
       "path": "2020_lecture_11_tasks"
+    },
+    {
+      "path": "2020_lecture_12_tasks"
     }
   ],
   "settings": {
         "files.exclude": {
             "**/.git": true,
+            "__pycache__": true
         },
         "editor.wordWrap": "wordWrapColumn",
         "editor.wordWrapColumn": 100,
