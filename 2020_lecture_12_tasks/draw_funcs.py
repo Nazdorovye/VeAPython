@@ -87,20 +87,24 @@ def star(n: int, size: float, op: Turtle):
   if n < 5:
     return
 
-
   for cpr in range(n // 2, 1, -1):
     if gcd(n, cpr) == 1:
+      angle = 360. / n * cpr
+
+      moveTo((op.pos()[0] - size / 2, op.pos()[1] + 
+        size / 2 * math.cos(angle / 2) * math.sin(angle / 2)), op)
+
       start = op.pos()
 
-      for x in range(n):
+      for _ in range(n):
         op.forward(size)
-        op.left(360. / n * cpr)
+        op.left(angle)
 
       op.setpos(start)
       return
 
   # 6-pointed star exception
-  for x in range(3):
+  for _ in range(3):
     op.forward(size)
     op.right(120)
 
