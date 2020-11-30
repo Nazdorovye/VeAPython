@@ -28,6 +28,10 @@
       "path": "2020_lecture_13_tasks/overrides",
       "name": "2020_lecture_13_tasks/overrides"
     },
+    {
+      "path": "2020_lecture_13_tasks/py_turtle",
+      "name": "2020_lecture_13_tasks/py_turtle"
+    },
   ],
   "settings": {
         "files.exclude": {

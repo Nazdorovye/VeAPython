@@ -36,7 +36,7 @@ class ball:
     if dir == None: dir = (float(randrange(-10, 10) * .1), float(randrange(-10, 10) * .1))
     self.direction = dir
 
-    if r == None: r = random() * 20
+    if r == None: r = randrange(10, 20)
     self.radius = r
 
   def update(self, dt: float):
