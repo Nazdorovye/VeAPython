@@ -24,6 +24,10 @@
     {
       "path": "2020_lecture_12_tasks"
     },
+    {
+      "path": "2020_lecture_13_tasks/overrides",
+      "name": "2020_lecture_13_tasks/overrides"
+    },
   ],
   "settings": {
         "files.exclude": {
