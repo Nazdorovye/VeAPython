@@ -24,16 +24,19 @@ balls = [ball(WND_WIDTH, WND_HEIGHT) for _ in range(10)]
 tMgr = timerMgr()
 secTimer = tMgr.addTimer()
 frmTimer = tMgr.addTimer(33333333) # 30 fps == 1000000000 ns / 30 frames
+tpsTimer = tMgr.addTimer(8333333) # 60 tps == 1000000000 ns / 60 ticks
 tps = 0
 fps = 0
 
 # MAIN
 while running:
-  tMgr.tick()
-  tps += 1
+  tMgr.tick() 
 
-  for b in balls:
-    b.update(tMgr.peekDt())
+  if tpsTimer.peekPassed():
+    tpsTimer.setPassed()
+    tps += 1
+    for b in balls:
+      b.update(tMgr.peekDt())
 
   if frmTimer.peekPassed():
     frmTimer.setPassed()
