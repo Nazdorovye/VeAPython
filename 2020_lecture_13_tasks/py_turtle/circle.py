@@ -1,5 +1,7 @@
+from typing import Tuple
+
 class Circle:
-  def __init__(self, center: list, radius: int):
+  def __init__(self, center: Tuple[float, float], radius: int):
     self.center = center
     self.radius = abs(radius)
 
@@ -13,12 +15,12 @@ class Circle:
   def move(self, point: list):
     self.center = point
 
-  def grow(self): 
-    self.radius += 1
+  def grow(self, accum = 1): 
+    self.radius += accum
 
-  def shrink(self):
+  def shrink(self, accum = 1):
     if self.radius > 0:
-      self.radius -= 1
+      self.radius -= accum
 
   def getArea(self):
     from math import pi
