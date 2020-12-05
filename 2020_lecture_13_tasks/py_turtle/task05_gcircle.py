@@ -3,7 +3,7 @@ from typing import Tuple, overload
 from turtle import Turtle, color
 
 class GCircle(Circle):
-  __op = Turtle()
+  __op = Turtle
   __upd = True
 
   def __init__(self, 
@@ -14,6 +14,8 @@ class GCircle(Circle):
     Circle.__init__(self, center, radius)
 
     if op != None: self.__op = op
+    else: self.__op = Turtle()
+    
     self.__op.hideturtle()
     self.__op.speed(0)
     self.__op.penup()
