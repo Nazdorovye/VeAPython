@@ -31,6 +31,7 @@ tMgr = timerMgr()
 frmTimer = tMgr.addTimer(33333333) 
 tpsTimer = tMgr.addTimer(8333333)
 
+redrawPoints = True
 
 while wnd.getRunning():
   tMgr.tick()
@@ -38,16 +39,19 @@ while wnd.getRunning():
   if tpsTimer.peekPassed():
     tpsTimer.setPassed()
 
-    if circ.render(False):
+    if redrawPoints:
       for point in points:
         if point.distance(circ) <= circ.getRadius():
           point.changeColor("BLUE")
         else:
           point.changeColor("RED")
 
+      redrawPoints = False      
+
   if frmTimer.peekPassed():
     frmTimer.setPassed()
 
+    redrawPoints = circ.render(False)
     for p in points:
       p.render(False)
 
