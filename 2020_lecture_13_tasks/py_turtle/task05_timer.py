@@ -2,12 +2,14 @@ import time
 
 class timer:
   __interval: int
-  __ticker = 0
-  __passed = False
+  __ticker: int
+  __passed: bool
 
   # === MAGIC METHODS ==============================================================================
   def __init__(self, ns_interval: int):
     self.setInterval(ns_interval)
+    self.__ticker = 0
+    self.__passed = False
 
   # === OPERATIONAL METHODS ========================================================================
   def tick(self, dt: int):

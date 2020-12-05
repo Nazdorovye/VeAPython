@@ -29,3 +29,6 @@ class Wnd:
     # Linux pfm
     self.__wnd.cv.bind("<Button-4>", fun)
     self.__wnd.cv.bind("<Button-5>", fun)
+
+  def setTitle(self, title: str):
+    self.__wnd.title(title)

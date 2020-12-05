@@ -1,3 +1,4 @@
+import turtle
 from task05_gcircle import GCircle
 from task05_gpoint import GPoint
 from task05_timer import *
@@ -28,14 +29,23 @@ circ = GCircle((0, 0), 220)
 points = [GPoint((randrange(-hw, hw), randrange(-hh, hh)), 2, clr="RED") for _ in range(POINT_CNT)]
 
 tMgr = timerMgr()
+secTimer = tMgr.addTimer()
 fpsTimer = tMgr.addTimer(33333333)
 tpsTimer = tMgr.addTimer(8333333)
 redrawPoints = True
+tps = 0
+fps = 0
+
+gui = turtle.Turtle(visible=False)
+gui.penup()
+gui.setpos((-hw + 20, hh - 20))
+gui.write("Mouse click to position, mouse scroll to resize")
 
 while wnd.getRunning():
   tMgr.tick()
 
   if tpsTimer.peekPassed():
+    tps += 1
     tpsTimer.setPassed()
 
     if redrawPoints:
@@ -48,10 +58,17 @@ while wnd.getRunning():
       redrawPoints = False
 
   if fpsTimer.peekPassed():
+    fps += 1
     fpsTimer.setPassed()
 
     redrawPoints = circ.render(False)
     for p in points:
       p.render(False)
+
+  if secTimer.peekPassed():
+    secTimer.setPassed()
+    wnd.setTitle(str.format("13_Task05 : TPS:%d FPS:%d" % (tps, fps)))
+    tps = 0
+    fps = 0
 
   wnd.update()
