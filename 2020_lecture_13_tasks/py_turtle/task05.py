@@ -3,7 +3,7 @@ from task05_gpoint import GPoint
 from task05_timer import *
 from task05_wnd import Wnd
 
-from random import randrange, random
+from random import randrange
 
 SCROLL_MAGN = 4
 POINT_CNT = 50
@@ -28,9 +28,8 @@ circ = GCircle((0, 0), 220)
 points = [GPoint((randrange(-hw, hw), randrange(-hh, hh)), 2, clr="RED") for _ in range(POINT_CNT)]
 
 tMgr = timerMgr()
-frmTimer = tMgr.addTimer(33333333) 
+fpsTimer = tMgr.addTimer(33333333)
 tpsTimer = tMgr.addTimer(8333333)
-
 redrawPoints = True
 
 while wnd.getRunning():
@@ -46,10 +45,10 @@ while wnd.getRunning():
         else:
           point.changeColor("RED")
 
-      redrawPoints = False      
+      redrawPoints = False
 
-  if frmTimer.peekPassed():
-    frmTimer.setPassed()
+  if fpsTimer.peekPassed():
+    fpsTimer.setPassed()
 
     redrawPoints = circ.render(False)
     for p in points:
